@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	{{- partial "head.html" . -}}
+	{{ template "_internal/opengraph.html" . }}
+	<body>
+		{{- partial "header.html" . -}}
+		<div class="row">
+			<div class="leftcolumn">
+				<!--<div class="card">-->
+				{{ block "main" . }}{{ end }}
+				<!--></div>-->
+				
+			</div>
+			
+			<div class="rightcolumn">
+			
+				<div class="sidecard">
+					{{- partial "siderecent.html" . -}}
+				</div>
+				
+				<div class="sidecard">
+					{{- partial "sidenav.html" . -}}
+				</div>	
+			</div>
+			
+		</div>
+		<div class="row">
+		{{- partial "footer.html" . -}}
+	</body>
+</html>

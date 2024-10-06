@@ -1,0 +1,24 @@
+<div class="cameracard">
+
+	<li class="camera-item">
+			{{ if .Params.featured_image }}
+				<a href="{{ .RelPermalink }}" class="listHead">
+					<img src="{{ .RelPermalink }}{{ .Params.featured_image }}">
+					<div class="shadow"></div>
+				</a>
+			{{ else }}
+				<img src="/images/default_camera.jpg">
+			{{ end }}
+		
+			<h3>
+				<a href="{{ .RelPermalink }}" class="listHead">
+					{{ .Title }}
+				</a>
+			</h3>
+
+				<a href="{{ .RelPermalink }}" class="readMore">
+				<p>{{ .Summary }}</p>
+				</a>
+	</li>
+	
+</div>

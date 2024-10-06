@@ -1,0 +1,40 @@
+{{ $cameraval := .Page.Param "camera" }}
+ 
+
+{{ range where (where .Site.RegularPages "Section" "cameras") "Params.camera" "eq" $cameraval }}
+&nbsp;
+&nbsp;
+
+
+<div class="colrowcamera">
+	<div class="columncameraleft">
+  			<a href="{{ .RelPermalink }}"><img src="{{ .RelPermalink }}{{ .Params.featured_image }}" width=250px></a>
+	</div>
+	<div class="columncameraright">
+		<h3>The camera used to shoot this film was the <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h3>
+		<p>{{ .Summary }}</p>
+		<p>Camera Information:</p>
+		<ul>
+			{{ $order := slice "maker" "model" "format" "style" "lens" }}
+			{{ $camera := index .Site.Data.cameralist.cameras $cameraval }}
+				{{ range $order }}
+					{{/* print all known fields in the desired order */}}
+					{{ $k := . }}
+					{{ $v := index $camera $k }}
+						{{ if eq $k "maker" }}
+							<li class="cameraList"><a href="/categories/{{ $v | urlize }}" class="listHead">{{ $k }}: {{ $v }}</a></li>
+						{{ else if eq $k "format"}}
+							<li class="cameraList"><a href="/categories/{{ $v | urlize }}" class="listHead">{{ $k }}: {{ $v }}</a></li>
+						{{ else if eq $k "style" }}
+							<li class="cameraList"><a href="/categories/{{ $v | urlize }}" class="listHead">{{ $k }}: {{ $v }}</a></li>
+						{{ else }}
+						{{ end }}
+				{{ end }}
+		</ul>
+		<a href="{{ .RelPermalink }}">See More...</a>
+	</div>
+</div>
+
+{{ end }}
+
+ 	 	

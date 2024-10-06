@@ -1,0 +1,9 @@
+<div class="header">
+		<img class="headerimg" src = "/images/header_logo_big.png">
+</div>
+	
+	<div class="nav">
+	{{ range .Site.Menus.main }}		
+		<a href="{{ .URL }}" class="buttonClass">{{ .Name }}</a>		
+	{{ end }}
+	</div>

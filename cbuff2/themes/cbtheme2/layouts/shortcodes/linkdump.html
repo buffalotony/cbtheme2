@@ -1,0 +1,15 @@
+<!-- creating our custom linkdump layout -->
+
+	<dt>
+		<span>
+			<a href = "{{ .Get "link" }}" class="dt">
+				{{ .Get "title" }}
+			</a>
+		</span>
+	</dt>
+	<br />
+
+	<dd>
+		{{ .Get "desc" }}
+	</dd>
+	<br />

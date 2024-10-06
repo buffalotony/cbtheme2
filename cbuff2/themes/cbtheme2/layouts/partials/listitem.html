@@ -1,0 +1,31 @@
+<div class="listcard">
+	
+	<li class="list-item">
+		<div class="featImg">
+			{{ if .Params.featured_image }}
+				<img src="{{ .RelPermalink }}{{ .Params.featured_image }}">
+			{{ else }}
+				<img src="/images/default_blog.jpg">
+			{{ end }}
+		</div>
+		
+		<div class="blogPrev">		
+			<h3>
+				<a href="{{ .RelPermalink }}" class="listHead">
+					{{ .Title }}
+				</a>
+			</h3>
+
+			{{ if .PublishDate }}
+				<p>Date: {{ .PublishDate.Format "January 6, 2006" }}</p>
+			{{ end }}
+			{{ if .Params.Tags }}
+				<p>Tags: {{ partial "tags.html" . -}}</p>
+			{{ end }}
+				<p>{{ .Summary | truncate 240 }}</p>
+				<a href="{{ .RelPermalink }}" class="readMore">
+					Read More ... 
+				</a>
+		</div>
+	</li>
+</div>

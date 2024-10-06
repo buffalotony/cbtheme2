@@ -1,0 +1,14 @@
+{{ define "main" }}
+
+<ul>
+{{ range .Paginator.Pages.ByPublishDate.Reverse }}
+	{{- partial "listitem.html" . -}}
+{{ end }}
+
+</ul>
+<div class="card">
+<div class="listcard'">
+	<center>{{ partial "pagination.html" . }}</center>
+</div>
+</div>
+{{ end }}

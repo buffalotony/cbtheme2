@@ -1,0 +1,9 @@
+{{ define "main" }}
+
+<ul>
+{{ range .Pages.ByPublishDate.Reverse }}
+	{{- partial "cameracard.html" . -}}
+{{ end }}
+</ul>
+
+{{ end }}

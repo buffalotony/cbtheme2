@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="card">
+<h1 class="single">{{ .Title }}</h1>
+<br />
+<p>
+{{ .Content }}
+</p>
+	<div class="endcard">
+	</div>
+	<br />
+		<div class="next">
+		{{ if .NextInSection }}
+			<a class="link-reverse" href="{{ .NextInSection.Permalink }}?ref=footer">« {{ .NextInSection.Title | truncate 50 "..." }}</a>
+		{{ end }}
+		</div>
+		<div class="prev">
+		{{ if .PrevInSection }}
+			<a class="link-reverse" href="{{ .PrevInSection.Permalink }}?ref=footer">{{ .PrevInSection.Title | truncate 50 "..."}} »</a>
+		{{ end }}
+		</div>
+	<br />
+</div>
+{{ end }}

@@ -1,0 +1,7 @@
+<h2 align = center>
+<a href =/tags class=dt>Tags</a>
+</h2>
+{{ $taxonomy := "tags" }}
+{{ range (index site.Taxonomies $taxonomy).ByCount }}
+  <a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a> ({{ .Count }})<br>
+{{ end }}

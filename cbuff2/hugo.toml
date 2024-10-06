@@ -1,0 +1,32 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'My New Hugo Site'
+theme = ['cbtheme2', 'hugo-shortcode-gallery']
+summaryLength = 2
+	
+[pagination]
+  pagerSize = 5
+  path = 'page'
+
+[menus]
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+  [[menus.main]]
+    name = 'Blog'
+    pageRef = '/blog'
+    weight = 20
+  [[menus.main]]
+    name = 'Galleries'
+    pageRef = '/galleries'
+    weight = 30
+  [[menus.main]]
+    name = 'Cameras'
+    pageRef = '/cameras'
+    weight = 40
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 50
+
